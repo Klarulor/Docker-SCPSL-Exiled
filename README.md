@@ -8,5 +8,5 @@ Commands:
   ```
   Run:
   ```
-  docker run -d -p <PORT>:7777/udp -v <PATH>/scpsl_config/<PORT>:/config -v <PATH>/EXILED/:/exiled  scpsl
+  docker run -d -p <PORT>:<PORT>/udp -e PORT=<PORT> -v $PWD/scpsl_config:/config -v $PWD/EXILED/:/exiled  scpsl
   ```
