@@ -32,14 +32,16 @@ USER root
 # Setup directory structure and permissions
 RUN groupadd -g $GID scpsl && \
     useradd -m -s /bin/false -u $UID -g scpsl scpsl && \
-    mkdir -p "$GAME_CONFIG_LOC" $CONFIG_LOC $INSTALL_LOC && \
-    ln -s $CONFIG_LOC "$GAME_CONFIG_LOC/$PORT" && \
+    mkdir -p "$GAME_CONFIG_LOC" $CONFIG_LOC "$CONFIG_LOC/$PORT" $INSTALL_LOC && \
+    ln -s "$CONFIG_LOC/$PORT" "$GAME_CONFIG_LOC/$PORT" && \
+    touch "$GAME_CONFIG_LOC/../verkey.txt" && \
+    touch "$CONFIG_LOC/verkey.txt" && \
+    ln -f "$CONFIG_LOC/verkey.txt" "$GAME_CONFIG_LOC/../verkey.txt" && \
     chown -R scpsl:scpsl $INSTALL_LOC $CONFIG_LOC /home/scpsl/.config
 COPY --chown=scpsl:scpsl --from=steambuild /scpserver $INSTALL_LOC
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 # EXILED SETUP
-
 # I/O
 VOLUME [ $CONFIG_LOC ]
 VOLUME [ "/exiled" ]
