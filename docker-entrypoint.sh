@@ -1,28 +1,16 @@
 #!/bin/bash
-
-path=${GAME_CONFIG_LOC:-"/home/scpsl/.config/SCP Secret Laboratory/config"}
-userPath=${USER_CONFIG_LOC:-"/home/scpsl/.config"}
+echo "Hello!"
 port=${PORT:-7777}
+EXILED_UPDATE=${UPD:false}
 
-mkdir -p "/config/$port"
-sudo - root
-cp $userPath/EXILED/Assembly-CSharp.dll ./SCPSL_Data/Managed/Assembly-CSharp.dll
-# cp -R "/exiled" "/home/scpsl/.config/EXILED"
-# sleep 2
-# echo "Successfully"
-# # COPY CONFIGS TAGASI
-# echo $port
-# function LoopBackConfigs(){
-#     echo "__________Configs loopbacked after 20seconds!!!"
-#     sleep 20
-#     echo "__________Configs loopbacked sucessfully!!!"
-#     cp -R "/home/scpsl/.config/EXILED/Exiled.Loader.dll" "/exiled"
-#     cp -R "/home/scpsl/.config/EXILED/Plugins" "/exiled"
-#     cp -R "/home/scpsl/.config/EXILED/Configs" "/exiled"
-#     cp -R "/home/scpsl/.config/EXILED/Logs" "/exiled"
-#     # verkey
-# }
-# LoopBackConfigs &
-# # Start SL
-# "$INSTALL_LOC/LocalAdmin" port
+#mkdir /scp_server
+#mv -n /home/container/Steam/steamapps/common/* /scp_server         
+#find  /home/container/Steam/steamapps/common/*/ -maxdepth 1 -type f -exec mv {} /scp_server \;
+#sleep 100
+cp /home/container/.config/EXILED/Assembly-CSharp.dll /scp_server/SCPSL_Data/Managed/Assembly-CSharp.dll
 
+export DOTNET_BUNDLE_EXTRACT_BASE_DIR="temp"
+
+
+cd /scp_server
+./LocalAdmin $port

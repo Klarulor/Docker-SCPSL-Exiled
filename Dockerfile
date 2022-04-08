@@ -1,53 +1,34 @@
-FROM steamcmd/steamcmd AS steambuild
-
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update && apt install -y wget
-
-ARG APPID=996560
-ARG STEAM_BETA
-
-# Make our config and give it to the steam user
+FROM ubuntu:16.04
+MAINTAINER joker119
 USER root
+RUN apt update && \
+    apt upgrade -y
+RUN echo "Building.."
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+RUN apt-get update
+RUN apt-get install apt-transport-https ca-certificates software-properties-common wget curl -y
+RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial main" | tee /etc/apt/sources.list.d/mono-official-stable.list
+RUN apt-get update
+RUN apt-get install -y mono-complete
 
-# Install the scpsl server
-RUN mkdir -p /scpserver && \
-    steamcmd \
-        +login anonymous \
-        +force_install_dir /scpserver \
-        +app_update $APPID $STEAM_BETA validate \
-        +quit
+RUN add-apt-repository multiverse
+RUN curl -fsSL https://deb.nodesource.com/setup_15.x | bash
+RUN dpkg --add-architecture i386
+RUN apt-get update
+RUN apt-get install lib32gcc1 nodejs -y
+RUN adduser --home /home/container container --disabled-password --gecos "" --uid 999
+RUN usermod -a -G container container
+RUN mkdir /home/container/.config
+RUN chown -R container:container /home/container
+RUN mkdir /mnt/server
+RUN chown -R container:container /mnt/server
+COPY ./install.sh /install.sh
+RUN mkdir /scp_server && \
+    chmod -R 777 /scp_server
+USER container
+RUN /install.sh 
+ENV USER=container HOME=/home/container
+ENV CACHEBUST=1
+COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 
-FROM mono AS runner
-
-ARG PORT=7777
-ARG UID=999
-ARG GID=999
-
-ENV CONFIG_LOC="/config"
-ENV INSTALL_LOC="/scpserver"
-ENV GAME_CONFIG_LOC="/home/scpsl/.config/SCP Secret Laboratory/config"
-
-USER root
-
-# Setup directory structure and permissions
-RUN groupadd -g $GID scpsl && \
-    useradd -m -s /bin/false -u $UID -g scpsl scpsl && \
-    mkdir -p "$GAME_CONFIG_LOC" $CONFIG_LOC "$CONFIG_LOC/$PORT" $INSTALL_LOC && \
-    ln -s "$CONFIG_LOC/$PORT" "$GAME_CONFIG_LOC/$PORT" && \
-    touch "$GAME_CONFIG_LOC/../verkey.txt" && \
-    touch "$CONFIG_LOC/verkey.txt" && \
-    ln -f "$CONFIG_LOC/verkey.txt" "$GAME_CONFIG_LOC/../verkey.txt" && \
-    chown -R scpsl:scpsl $INSTALL_LOC $CONFIG_LOC /home/scpsl/.config
-COPY --chown=scpsl:scpsl --from=steambuild /scpserver $INSTALL_LOC
-COPY docker-entrypoint.sh /docker-entrypoint.sh
-
-# EXILED SETUP
-# I/O
-VOLUME [ $CONFIG_LOC ]
-VOLUME [ "/exiled" ]
-EXPOSE $PORT/udp
-
-# Expose and run
-USER scpsl
-WORKDIR $INSTALL_LOC
-ENTRYPOINT /docker-entrypoint.sh
+CMD [ "/bin/bash", "/docker-entrypoint.sh"]
