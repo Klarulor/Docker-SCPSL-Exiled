@@ -25,7 +25,7 @@ fi
 
 
 echo "Updating Installer.."
-if  [ ! -f "/home/container/.config/EXILED/Assembly-CSharp.dll" ]; then
+if  [ 1 == 1 ]; then # ! -f "/home/container/.config/EXILED/Assembly-CSharp.dll"
 echo "----------------------------------------------- INSTALLING EXIELD"
         rm -rf Exiled.Installer-Linux
         wget $URL
@@ -52,7 +52,7 @@ if [ ! -d "/home/container/.config" ]; then
   mkdir .config
 fi
 echo "we-4"
-if  [ ! -f "/home/container/.config/EXILED/Assembly-CSharp.dll" ]; then
+if  [ 1 == 1 ]; then
         ./Exiled.Installer-Linux --appdata /home/container/.config -p /home/container/scp_server $EXTRA
 fi
 echo "we-5"
@@ -69,8 +69,8 @@ fi
 echo "we-6"
 echo ${MODIFIED_STARTUP}
 
-[ -f "/home/container/scp_server/SCPSL_Data/Managed/Assembly-CSharp.dll" ] && cp "/home/container/scp_server/SCPSL_Data/Managed/Assembly-CSharp.dll" "/home/container/.config/EXILED/Assembly-CSharp.dll"
-cp "/home/container/.config/EXILED/Assembly-CSharp.dll" "/home/container/scp_server/SCPSL_Data/Managed/Assembly-CSharp.dll"
+#[ -f "/home/container/scp_server/SCPSL_Data/Managed/Assembly-CSharp.dll" ] && cp "/home/container/scp_server/SCPSL_Data/Managed/Assembly-CSharp.dll" "/home/container/.config/EXILED/Assembly-CSharp.dll"
+#cp "/home/container/.config/EXILED/Assembly-CSharp.dll" "/home/container/scp_server/SCPSL_Data/Managed/Assembly-CSharp.dll"
 
 #touch /_installed
 
