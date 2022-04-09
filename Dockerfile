@@ -1,8 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER joker119
 USER root
-RUN apt update && \
-    apt upgrade -y
 RUN echo "Building.."
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 RUN apt-get update
@@ -22,13 +20,10 @@ RUN mkdir /home/container/.config
 RUN chown -R container:container /home/container
 RUN mkdir /mnt/server
 RUN chown -R container:container /mnt/server
-COPY ./install.sh /install.sh
-RUN mkdir /scp_server && \
-    chmod -R 777 /scp_server
 USER container
-RUN /install.sh 
 ENV USER=container HOME=/home/container
+WORKDIR /home/container
 ENV CACHEBUST=1
-COPY ./docker-entrypoint.sh /docker-entrypoint.sh
+COPY ./entrypoint.sh /entrypoint.sh
 
-CMD [ "/bin/bash", "/docker-entrypoint.sh"]
+CMD ["/bin/bash", "/entrypoint.sh"]
