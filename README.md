@@ -12,6 +12,6 @@ Commands:
   ```
 | Enviroment variable | Default value | List of values | Description            |
 |---------------------|---------------|----------------|------------------------|
-| ISNTALL_VANILLA     | "0"           | "0" / "1"      |                        |
+| INSTALL_VANILLA     | "0"           | "0" / "1"      |                        |
 | REINSTALL           | "0"           | "0" / "1"      |                        |
 | URL                 | <URL>         | <URL>          | Url for install EXILED |
