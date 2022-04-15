@@ -1,5 +1,4 @@
 FROM ubuntu:20.04
-MAINTAINER joker119
 USER root
 RUN echo "Building.."
 
