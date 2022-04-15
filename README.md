@@ -8,5 +8,10 @@ Commands:
   ```
   Run:
   ```
-  docker run -p <IP>:7777:7777/udp -e STARTUP="./LocalAdmin 7777" -e REINSTALL=1 -e URL="https://github.com/Exiled-Team/EXILED/releases/download/5.0.0-beta.5/Exiled.Installer-Linux" --network host --name scpsl -v <PATH_TO_FOLDER>:/home/container/.config klarulor/scpsl
+  docker run -p  docker run -p <IP>:127.0.0.1:7777:7777/udp --name scpsl -v <PATH_TO_CONFIG>:/home/container/.config klarulor/scpsl
   ```
+| Enviroment variable | Default value | List of values | Description            |
+|---------------------|---------------|----------------|------------------------|
+| ISNTALL_VANILLA     | "0"           | "0" / "1"      |                        |
+| REINSTALL           | "0"           | "0" / "1"      |                        |
+| URL                 | <URL>         | <URL>          | Url for install EXILED |

@@ -1,10 +1,12 @@
 #!/bin/bash
 echo "Hello!"
 cd /home/container || exit
-MODIFIED_STARTUP=$(eval echo "$(echo "${STARTUP}" | sed -e 's/{{/${/g' -e 's/}}/}/g')")
+MODIFIED_STARTUP=$(eval echo "$(echo "${STARTUP:-"./LocalAdmin 7777"}" | sed -e 's/{{/${/g' -e 's/}}/}/g')")
+REINSTALL_ENV="${REINSTALL:-"0"}"
+download_url="${URL:-"https://github.com/Exiled-Team/EXILED/releases/download/5.1.3/Exiled.Installer-Linux"}"
 echo "/home/container/scp_server$: ${MODIFIED_STARTUP}"
-
-if [ $REINSTALL == 1 ] && [ ! -f ./scp_server/LocalAdmin ]; then
+INSTALL_VANILLA="${VANILLA:-"0"}"
+if [ $REINSTALL_ENV != "0" ] && [ ! -f ./scp_server/LocalAdmin ]; then
         if [ ! -f "steamcmd.sh" ]; then
             curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
         fi
@@ -25,11 +27,12 @@ fi
 
 
 echo "Updating Installer.."
-if  [ 1 == 1 ]; then # ! -f "/home/container/.config/EXILED/Assembly-CSharp.dll"
+if  [ ! -f "/home/container/__var_exiled_installed" ] && [ $INSTALL_VANILLA == "0" ]; then # ! -f "/home/container/.config/EXILED/Assembly-CSharp.dll"
 echo "----------------------------------------------- INSTALLING EXIELD"
         rm -rf Exiled.Installer-Linux
-        wget $URL
+        wget $download_url
         chmod +x Exiled.Installer-Linux
+        
 fi
 
 echo "Installer updated. Running.."
@@ -52,8 +55,9 @@ if [ ! -d "/home/container/.config" ]; then
   mkdir .config
 fi
 echo "we-4"
-if  [ 1 == 1 ]; then
+if  [ ! -f "/home/container/__var_exiled_installed" ] && [ $INSTALL_VANILLA == "0" ]; then
         ./Exiled.Installer-Linux --appdata /home/container/.config -p /home/container/scp_server $EXTRA
+        touch "/home/container/__var_exiled_installed" 
 fi
 echo "we-5"
 
