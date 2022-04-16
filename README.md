@@ -17,3 +17,8 @@ Commands:
 | USE_OWN             | "0"           | "0" / "1"      | Use own AssemblyCsFile |
 | URL                 | *URL*         | *URL*          | Url for install EXILED |
 
+<<<<<<< HEAD
+=======
+
+*Some files were taken from https://github.com/Exiled-Team/pterodactyl*
+>>>>>>> f902398077daa3f3fc069b558cc0eaa1045f6b09
