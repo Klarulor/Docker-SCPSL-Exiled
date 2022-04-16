@@ -3,6 +3,7 @@ echo "Hello!"
 cd /home/container || exit
 MODIFIED_STARTUP=$(eval echo "$(echo "${STARTUP:-"./LocalAdmin 7777"}" | sed -e 's/{{/${/g' -e 's/}}/}/g')")
 REINSTALL_ENV="${REINSTALL:-"0"}"
+USE_OWN="${OWN:-"0"}"
 download_url="${URL:-"https://github.com/Exiled-Team/EXILED/releases/download/5.1.3/Exiled.Installer-Linux"}"
 echo "/home/container/scp_server$: ${MODIFIED_STARTUP}"
 INSTALL_VANILLA="${VANILLA:-"0"}"
@@ -27,7 +28,7 @@ fi
 
 
 echo "Updating Installer.."
-if  [ ! -f "/home/container/__var_exiled_installed" ] && [ $INSTALL_VANILLA == "0" ]; then # ! -f "/home/container/.config/EXILED/Assembly-CSharp.dll"
+if  [ ! -f "/home/container/__var_exiled_installed" ] && [ $INSTALL_VANILLA == "0" ]  && [ $USE_OWN == "0" ]; then # ! -f "/home/container/.config/EXILED/Assembly-CSharp.dll"
 echo "----------------------------------------------- INSTALLING EXIELD"
         rm -rf Exiled.Installer-Linux
         wget $download_url
@@ -55,7 +56,7 @@ if [ ! -d "/home/container/.config" ]; then
   mkdir .config
 fi
 echo "we-4"
-if  [ ! -f "/home/container/__var_exiled_installed" ] && [ $INSTALL_VANILLA == "0" ]; then
+if  [ ! -f "/home/container/__var_exiled_installed" ] && [ $INSTALL_VANILLA == "0" ] && [ $USE_OWN == "0" ]; then
         ./Exiled.Installer-Linux --appdata /home/container/.config -p /home/container/scp_server $EXTRA
         touch "/home/container/__var_exiled_installed" 
 fi
@@ -74,7 +75,10 @@ echo "we-6"
 echo ${MODIFIED_STARTUP}
 
 #[ -f "/home/container/scp_server/SCPSL_Data/Managed/Assembly-CSharp.dll" ] && cp "/home/container/scp_server/SCPSL_Data/Managed/Assembly-CSharp.dll" "/home/container/.config/EXILED/Assembly-CSharp.dll"
-#cp "/home/container/.config/EXILED/Assembly-CSharp.dll" "/home/container/scp_server/SCPSL_Data/Managed/Assembly-CSharp.dll"
+if [ $USE_OWN == "0" ]; then
+        cp "/home/container/.config/EXILED/Assembly-CSharp.dll" "/home/container/scp_server/SCPSL_Data/Managed/Assembly-CSharp.dll"
+fi
+
 
 #touch /_installed
 

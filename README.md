@@ -14,4 +14,6 @@ Commands:
 |---------------------|---------------|----------------|------------------------|
 | INSTALL_VANILLA     | "0"           | "0" / "1"      |                        |
 | REINSTALL           | "0"           | "0" / "1"      |                        |
+| USE_OWN             | "0"           | "0" / "1"      | Use own AssemblyCsFile |
 | URL                 | *URL*         | *URL*          | Url for install EXILED |
+
