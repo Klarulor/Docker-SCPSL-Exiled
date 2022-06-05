@@ -6,4 +6,3 @@ echo "Installing SCP:SL"
 echo "SCPSL Successfully installed"
 
 # Setup hardlinks with mounting
-mkdir home/container/data

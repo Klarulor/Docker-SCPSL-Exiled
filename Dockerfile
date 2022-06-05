@@ -48,7 +48,25 @@ RUN mkdir /home/container/.config
 RUN chown -R container:container /home/container
 RUN mkdir /mnt/server
 RUN chown -R container:container /mnt/server
+
+
+#ENV SERVER_PATH="/home/container/scp_server/"
+#ENV CONFIG_PATH="/home/container/.config"
+#ENV DATA_PATH="/home/container/data"
+
+#RUN mkdir $DATA_PATH
+#RUN chmod 777 $DATA_PATH
+#RUN mount -o bind $CONFIG_PATH $DATA_PATH
+
+
+
+
+
+
+
+
 USER container
+
 ENV USER=container HOME=/home/container
 WORKDIR /home/container
 
@@ -56,6 +74,7 @@ COPY ./preinstallation.sh /home/container/preinstallation.sh
 RUN /home/container/preinstallation.sh && \
     rm /home/container/preinstallation.sh
 
+COPY ./exiled-preinstallation.sh /home/container/exiled-preinstallation.sh
 RUN /home/container/exiled-preinstallation.sh && \
     rm /home/container/exiled-preinstallation.sh
 
