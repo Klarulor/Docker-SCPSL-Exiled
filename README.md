@@ -8,7 +8,7 @@ Commands:
   ```
   Run:
   ```
-  docker run -p  docker run -p <IP>:127.0.0.1:7777:7777/udp --name scpsl -e PORT=7777 -v <PATH_TO_CONFIG>:/home/container/.config klarulor/scpsl
+  docker run -p  docker run -p <IP>:7777:7777/udp --name scpsl -e PORT=7777 -v <PATH_TO_CONFIG>:/home/container/.config klarulor/scpsl
   ```
 | Enviroment variable | Default value | List of values | Description            |
 |---------------------|---------------|----------------|------------------------|
