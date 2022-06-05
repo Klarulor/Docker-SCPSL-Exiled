@@ -1,2 +1,0 @@
-run:
-    docker run -p 7777:7777/udp -e STARTUP="./LocalAdmin 7777" -e REINSTALL=1 -e URL="https://github.com/Exiled-Team/EXILED/releases/download/5.2.1/Exiled.Installer-Linux" --network host --name scpsl -v $PWD/scpsl:/home/container/.config klarulor/scpsl
