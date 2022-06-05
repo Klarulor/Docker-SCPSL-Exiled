@@ -1,8 +1,5 @@
 SERVER_PATH="/home/container/scp_server/"
 CONFIG_PATH="/home/container/.config/"
-DATA_PATH="home/container/data"
-
-
 
 
 echo "Installing EXILED..."

@@ -4,7 +4,7 @@ reinstall=${REINSATLL_EXILED:-0}
 
 SERVER_PATH="/home/container/scp_server/"
 CONFIG_PATH="/home/container/.config/"
-DATA_PATH="home/container/data"
+DATA_PATH="home/container/data/"
 
 # Mount directories and copy origin files
 #mkdir home/container/data/SCPSL home/container/data/EXILED
