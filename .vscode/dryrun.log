@@ -1,0 +1,7 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'c:/Users/Klarulor/Desktop/Docker/SCPSL-Docker'
+ 
+Makefile:2: *** multiple target patterns.  Stop.
+
+make: Leaving directory 'c:/Users/Klarulor/Desktop/Docker/SCPSL-Docker'
+ 

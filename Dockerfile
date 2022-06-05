@@ -56,6 +56,9 @@ COPY ./preinstallation.sh /home/container/preinstallation.sh
 RUN /home/container/preinstallation.sh && \
     rm /home/container/preinstallation.sh
 
+RUN /home/container/exiled-preinstallation.sh && \
+    rm /home/container/exiled-preinstallation.sh
+
 ENV CACHEBUST=1
 COPY ./entrypoint.sh /entrypoint.sh
 
