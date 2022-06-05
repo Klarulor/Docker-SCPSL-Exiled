@@ -6,6 +6,8 @@ SERVER_PATH="/home/container/scp_server/"
 CONFIG_PATH="/home/container/.config"
 EXAMPLE_PATH="/home/container/ExiledExample"
 
+
+
 reinstallExiled(){
     echo "Reinstalling EXILED..."
     wget $reinstall
