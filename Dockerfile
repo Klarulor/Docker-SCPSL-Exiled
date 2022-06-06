@@ -19,16 +19,6 @@ RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-p
     apt-get update && \
     apt-get install -y aspnetcore-runtime-6.0
 
-#        Instead ->
-#RUN apt-get update && apt-get install -y gnupg2
-#RUN apt-get purge libmono* cli-common mono-runtime
-#RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-#RUN apt-get update
-#RUN apt-get install apt-transport-https ca-certificates software-properties-common wget curl -y
-#RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial main" | tee /etc/apt/sources.list.d/mono-official-stable.list
-#RUN apt-get update
-#RUN apt-get install -y mono-complete
-#        This -> 
 RUN apt update && \
     apt install -y dirmngr gnupg apt-transport-https ca-certificates software-properties-common && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF   && \
@@ -48,22 +38,6 @@ RUN mkdir /home/container/.config
 RUN chown -R container:container /home/container
 RUN mkdir /mnt/server
 RUN chown -R container:container /mnt/server
-
-
-#ENV SERVER_PATH="/home/container/scp_server/"
-#ENV CONFIG_PATH="/home/container/.config"
-#ENV DATA_PATH="/home/container/data"
-
-#RUN mkdir $DATA_PATH
-#RUN chmod 777 $DATA_PATH
-#RUN mount -o bind $CONFIG_PATH $DATA_PATH
-
-
-
-
-
-
-
 
 USER container
 
