@@ -1,0 +1,358 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.3
+# Built for Windows32
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Thu Jun 23 22:50:43 2022
+
+# Variables
+
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+# environment
+SYSTEMDRIVE = C:
+# environment
+LC_ALL = C
+# environment
+USERPROFILE = C:\Users\Klarulor
+# environment
+VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
+# environment
+LOCALAPPDATA = C:\Users\Klarulor\AppData\Local
+# environment
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-c03b2c2e-9ca9-4fd0-b8fb-d1307937a33e-sock
+# environment
+VSCODE_CWD = C:\Users\Klarulor\AppData\Local\Programs\Microsoft VS Code
+# environment
+CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
+# environment
+SYSTEMROOT = C:\windows
+# environment
+PROCESSOR_LEVEL = 6
+# environment
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules
+# default
+MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
+# automatic
+@D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_9196_WPNVLMJWSMYXRAAN
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+JETBRAINS RIDER = C:\Program Files\JetBrains\JetBrains Rider 2021.3.4\bin;
+# automatic
+%D = $(patsubst %/,%,$(patsubst %\,%,$(dir $%)))
+# automatic
+^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\Klarulor\AppData\Roaming\Code\CachedData\30d9c6cd9483b2cc586687151bcbcd635f373630
+# environment
+LANG = C
+# default
+.LOADED := 
+# environment
+TMP = C:\Users\Klarulor\AppData\Local\Temp
+# default
+.INCLUDE_DIRS = .
+# environment
+PROCESSOR_ARCHITEW6432 = AMD64
+# makefile
+MAKEFLAGS = pqrR
+# environment
+GOLAND_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\goland.vmoptions
+# environment
+ONEDRIVE = C:\Users\Klarulor\OneDrive
+# environment
+INTELLIJ IDEA COMMUNITY EDITION = C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.3\bin;
+# makefile
+CURDIR := c:/Users/Klarulor/Desktop/Docker/SCPSL-Docker
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
+*D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
+# environment
+PROGRAMFILES = C:\Program Files (x86)
+# environment
+DOTNET_REACTOR = C:\Program Files (x86)\Eziriz\.NET Reactor
+# environment
+JETBRAINSCLIENT_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\jetbrainsclient.vmoptions
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# automatic
++D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+PT8HOME = C:\Program Files\Cisco Packet Tracer 8.1.1
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 9196
+# environment
+CLION = C:\Program Files\JetBrains\CLion 2022.1\bin;
+# automatic
+?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
+# environment
+CLION_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\clion.vmoptions
+# automatic
+*F = $(notdir $*)
+# environment
+APPCODE_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\appcode.vmoptions
+# automatic
+<D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# default
+MAKE_HOST := Windows32
+# environment
+PROGRAMDATA = C:\ProgramData
+# default
+SHELL := sh.exe
+# environment
+HOMEPATH = \Users\Klarulor
+# default
+MAKECMDGOALS := all
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+COMSPEC = C:\windows\system32\cmd.exe
+# environment
+WEBSTORM = C:\Program Files\JetBrains\WebStorm 2021.3.3\bin;
+# environment
+WINDIR = C:\windows
+# environment
+PHPSTORM_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\phpstorm.vmoptions
+# environment
+RUBYMINE_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\rubymine.vmoptions
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = C:\ProgramData\Oracle\Java\javapath;C:\ffmpeg\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Cloudflare\Cloudflare WARP;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\Klarulor\AppData\Local\Microsoft\WindowsApps;C:\Users\Klarulor\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Klarulor\.dotnet\tools;C:\Program Files (x86)\Nmap;C:\Users\Klarulor\AppData\Local\Programs\Hyper\resources\bin;C:\Users\Klarulor\AppData\Roaming\npm;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\IDEMIA\AWP\Dlls;C:\Program Files\IDEMIA\AWP\Dlls;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Eziriz\.NET Reactor;C:\Program Files\Kubernetes\Minikube;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\Klarulor\AppData\Local\Microsoft\WindowsApps;C:\Users\Klarulor\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Klarulor\.dotnet\tools;C:\Program Files (x86)\Nmap;C:\Users\Klarulor\AppData\Local\Programs\Hyper\resources\bin;C:\Users\Klarulor\AppData\Roaming\npm;C:\Program Files\JetBrains\WebStorm 2021.3.3\bin;;C:\Program Files\JetBrains\JetBrains Rider 2021.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.3\bin;;C:\Program Files\JetBrains\CLion 2022.1\bin;
+# environment
+COMPUTERNAME = DESKTOP-K3BNAC9
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+PROMPT = $P$G
+# environment
+CHOCOLATEYLASTPATHUPDATE = 132904586666939416
+# environment
+WEBIDE_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\webide.vmoptions
+# environment
+PYCHARM_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\pycharm.vmoptions
+# environment
+RIDER_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\rider.vmoptions
+# environment
+IDEA_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\idea.vmoptions
+# environment
+LOGONSERVER = \\DESKTOP-K3BNAC9
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+USERNAME = Klarulor
+# environment
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# automatic
+?F = $(notdir $?)
+# environment
+PROGRAMW6432 = C:\Program Files
+# environment
+DATAGRIP_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\datagrip.vmoptions
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# environment
+WEBSTORM_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\webstorm.vmoptions
+# automatic
++F = $(notdir $+)
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERDOMAIN = DESKTOP-K3BNAC9
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+OS = Windows_NT
+# environment
+DATASPELL_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\dataspell.vmoptions
+# makefile
+.DEFAULT_GOAL := run
+# default
+MAKE_VERSION := 4.3
+# environment
+KCTL = C:\Users\Klarulor\Desktop\kubernetes\kubectl.exe
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# environment
+USERDOMAIN_ROAMINGPROFILE = DESKTOP-K3BNAC9
+# environment
+NUMBER_OF_PROCESSORS = 6
+# environment
+PUBLIC = C:\Users\Public
+# environment
+JETBRAINS_CLIENT_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\jetbrains_client.vmoptions
+# environment
+APPDATA = C:\Users\Klarulor\AppData\Roaming
+# environment
+HOMEDRIVE = C:
+# environment
+PROCESSOR_ARCHITECTURE = x86
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+TEMP = C:\Users\Klarulor\AppData\Local\Temp
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\1804f3d51be72852788159bcf6d17798-1.68.1-main-sock
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# environment
+SESSIONNAME = Console
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
+# environment
+PROCESSOR_REVISION = 9e0c
+# environment
+GATEWAY_VM_OPTIONS = C:\Users\Klarulor\Desktop\nbv\vmoptions\gateway.vmoptions
+# environment
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 12, GenuineIntel
+# variable set hash-table stats:
+# Load=119/1024=12%, Rehash=0, Collisions=11/146=8%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (key c:/Users/Klarulor/Desktop/Docker/SCPSL-Docker, mtime 1656013842): 17 files, no impossibilities.
+
+# 17 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+installSCPSL:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 15):
+	make installSteamcmd
+	powershell.exe -file "./build-scripts/installSCPSL.ps1"
+	cd ..
+
+# Not a target:
+Makefile:
+#  Implicit rule search has  
+been done.
+#  Last modified 2022-06-23 21:10:52
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+fast-arm:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 6):
+	echo Building fast arm...
+	docker buildx build --platform linux/arm64 -f ./Dockerfile.arm64 -t klarulor/scpsl:arm64 --load .
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+installSteamcmd:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 20):
+	powershell.exe -file "./build-scripts/installSteamcmd.ps1"
+	cd ..
+
+run:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 2):
+	docker build -t klarulor/scpsl:latest .
+
+minimal:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 4):
+	docker build --build-arg CATCH_SL=-0 -t klarulor/scpsl:minimal .
+
+arm:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 10):
+	echo hello
+	make installSCPSL
+	make fast-arm
+
+# files hash-table stats:
+# Load=10/1024=1%, Rehash=0, Collisions=0/20=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 26 / storage = 273 B / avg = 10 B
+# current buf: size = 8174 B / used = 273 B / count = 26 / avg = 10 B
+
+# strcache performance: lookups = 36 / hit rate = 27%
+# hash-table stats:
+# Load=26/8192=0%, Rehash=0, Collisions=0/36=0%
+# Finished Make data base on Thu Jun 23 22:50:43 2022
+ 
+
+ 
