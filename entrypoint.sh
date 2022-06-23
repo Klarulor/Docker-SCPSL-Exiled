@@ -41,4 +41,6 @@ fi;
 export DOTNET_BUNDLE_EXTRACT_BASE_DIR="temp"
 echo "Stating server at $server_port port.."
 cd $SERVER_PATH
-./LocalAdmin $server_port
+ls
+#./LocalAdmin $server_port
+mono /home/container/scp_server/LocalAdmin.exe ${server_port}

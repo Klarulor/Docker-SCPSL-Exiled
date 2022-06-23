@@ -21,7 +21,7 @@ RUN rm packages-microsoft-prod.deb
 RUN apt-get update 
 RUN apt-get install -y apt-transport-https
 RUN apt-get update
-RUN apt-get install -y aspnetcore-runtime-6.0
+#RUN apt-get install -y aspnetcore-runtime-6.0
 
 RUN apt update && \
     apt install -y dirmngr gnupg apt-transport-https ca-certificates software-properties-common && \
@@ -31,10 +31,10 @@ RUN apt update && \
 
 
 
+
 RUN add-apt-repository multiverse
 RUN curl -fsSL https://deb.nodesource.com/setup_15.x | bash
 RUN dpkg --add-architecture i386
-RUN apt-get install lib32gcc1 nodejs -y
 RUN adduser --home /home/container container --disabled-password --gecos "" --uid 999
 RUN usermod -a -G container container
 RUN mkdir /home/container/.config
@@ -42,26 +42,28 @@ RUN chown -R container:container /home/container
 RUN mkdir /mnt/server
 RUN chown -R container:container /mnt/server
 
+
+
+# FOR ARM
+RUN wget https://download.visualstudio.microsoft.com/download/pr/7c62b503-4ede-4ff2-bc38-50f250a86d89/3b5e9db04cbe0169e852cb050a0dffce/dotnet-sdk-6.0.300-linux-arm64.tar.gz && \
+wget https://download.visualstudio.microsoft.com/download/pr/8ba7087e-4513-41e5-8359-a4bcd2a3661f/e6828f0d8cf1ecc63074c9ff57685e27/aspnetcore-runtime-6.0.5-linux-arm64.tar.gz
+RUN mkdir /home/container/dotnet-arm64
+RUN tar zxf dotnet-sdk-6.0.300-linux-arm64.tar.gz -C /home/container/dotnet-arm64
+RUN tar zxf aspnetcore-runtime-6.0.5-linux-arm64.tar.gz -C /home/container/dotnet-arm64
+RUN export DOTNET_ROOT=/home/container/dotnet-arm64
+RUN export PATH=/home/container/dotnet-arm64
+
+
 USER container
 
 ENV USER=container HOME=/home/container
 WORKDIR /home/container
 
-COPY ./preinstallation.sh /home/container/preinstallation.sh
-COPY ./temp_scp /home/container/temp_scp
-RUN if [ $CATCH_SL == 1 ]; then && \
-        mv /home/container/temp_scp /home/container/scp_server_image && \
-    else $$\
-        /home/container/preinstallation.sh && \
-    fi
-RUN rm /home/container/preinstallation.sh
+COPY ./temp_scp /home/container/scp_server
 
 COPY ./exiled-preinstallation.sh /home/container/exiled-preinstallation.sh
-RUN if [ $CATCH_SL == 1 ]; then && \
-        /home/container/exiled-preinstallation.sh  && \
-        rm /home/container/exiled-preinstallation.sh && \
-    fi
-
+RUN /home/container/exiled-preinstallation.sh
+RUN rm /home/container/exiled-preinstallation.sh
 
 ENV CACHEBUST=1
 COPY ./entrypoint.sh /entrypoint.sh
