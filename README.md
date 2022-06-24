@@ -2,14 +2,18 @@
 Docker image for SCP:SL Dedicated server with EXILED framework
 
 Commands:
-  Build:
-  ```
-  docker build --name scpsl .
-  ```
-  Run:
-  ```
-  docker run -p <IP>:7777:7777/udp --name scpsl -e PORT=7777 -v <PATH_TO_CONFIG>:/home/container/.config klarulor/scpsl
-  ```
+  **Build:**
+
+    Build normal version for x86 ```
+    make run 
+    ```
+    Build version for ARM ```
+    make arm
+    ```
+    Run:
+    ```
+    docker run -p <IP>:7777:7777/udp --name scpsl -e PORT=7777 -v <PATH_TO_CONFIG>:/home/container/.config klarulor/scpsl
+    ```
 | Enviroment variable | Default value | List of values | Description            |
 |---------------------|---------------|----------------|------------------------|
 | PORT                | 7777          | *SERVER PORT*  |                        |

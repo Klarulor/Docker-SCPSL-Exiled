@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 23 22:50:43 2022
+# Make data base, printed on Fri Jun 24 16:07:03 2022
 
 # Variables
 
@@ -25,7 +25,7 @@ VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
 # environment
 LOCALAPPDATA = C:\Users\Klarulor\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-c03b2c2e-9ca9-4fd0-b8fb-d1307937a33e-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-b1863877-3b81-4c48-b813-aa34c53552a9-sock
 # environment
 VSCODE_CWD = C:\Users\Klarulor\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -41,7 +41,7 @@ MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_9196_WPNVLMJWSMYXRAAN
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_17568_MXRVVLQLRDAHAIWX
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -109,7 +109,7 @@ PT8HOME = C:\Program Files\Cisco Packet Tracer 8.1.1
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 9196
+VSCODE_PID = 17568
 # environment
 CLION = C:\Program Files\JetBrains\CLion 2022.1\bin;
 # automatic
@@ -223,7 +223,8 @@ HOMEDRIVE = C:
 # environment
 PROCESSOR_ARCHITECTURE = x86
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHo 
+stProcess
 # environment
 COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
 # environment
@@ -243,7 +244,8 @@ ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
 # default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
+.FEATURES := target-specific order-only second-expansion else-if 
+ shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
 PROCESSOR_REVISION = 9e0c
 # environment
@@ -280,8 +282,8 @@ installSCPSL:
 
 # Not a target:
 Makefile:
-#  Implicit rule search has  
-been done.
+#  Implicit rule search ha 
+s been done.
 #  Last modified 2022-06-23 21:10:52
 #  File has been updated.
 #  Successfully updated.
@@ -352,7 +354,6 @@ arm:
 # strcache performance: lookups = 36 / hit rate = 27%
 # hash-table stats:
 # Load=26/8192=0%, Rehash=0, Collisions=0/36=0%
-# Finished Make data base on Thu Jun 23 22:50:43 2022
- 
+# Finished Make data base on Fri Jun 24 16:07:03 2022
 
  
