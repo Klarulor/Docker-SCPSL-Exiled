@@ -4,10 +4,12 @@ Docker image for SCP:SL Dedicated server with EXILED framework
 Commands:
   **Build:**
 
-    Build normal version for x86 ```
+    Build normal version for x86 
+    ```
     make run 
     ```
-    Build version for ARM ```
+    Build version for ARM 
+    ```
     make arm
     ```
     Run:
