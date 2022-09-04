@@ -1,7 +1,7 @@
 SERVER_PATH="/home/container/scp_server"
 EXAMPLE_PATH="/home/container/ExiledExample"
 
-URL="https://github.com/Exiled-Team/EXILED/releases/download/5.2.1/Exiled.Installer-Linux"
+URL="https://github.com/Exiled-Team/EXILED/releases/latest/download/Exiled.Installer-Linux"
 
 echo "Installing EXILED..."
 mkdir $EXAMPLE_PATH
