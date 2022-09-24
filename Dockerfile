@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 USER root
-RUN echo "Building.."
+RUN echo "Building..."
 
 RUN apt update && \
     apt upgrade -y
@@ -44,9 +44,11 @@ USER container
 ENV USER=container HOME=/home/container
 WORKDIR /home/container
 
-COPY ./preinstallation.sh /home/container/preinstallation.sh
-RUN /home/container/preinstallation.sh && \
-    rm /home/container/preinstallation.sh
+# COPY ./preinstallation.sh /home/container/preinstallation.sh
+# RUN /home/container/preinstallation.sh && \
+#     rm /home/container/preinstallation.sh
+
+COPY ./temp_scp /home/container/scp_server
 
 COPY ./exiled-preinstallation.sh /home/container/exiled-preinstallation.sh
 RUN /home/container/exiled-preinstallation.sh && \
